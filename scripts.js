@@ -132,14 +132,15 @@ function handleCheckInGrounding(response) {
 /* ================================
    Breathing Exercise Logic
 ================================ */
+let breathCount = 0;
+const maxBreaths = 4; // Number of breathing cycles
+
 function initBreathingExercise() {
     // Breathing Exercise Logic
     let instructions = document.getElementById('instruction');
     let circle = document.querySelector('.circle');
     let startButton = document.getElementById('startButton');
     let checkInDiv = document.getElementById('check-in-breathing');
-    let breathCount = 0;
-    let maxBreaths = 4; // Number of breathing cycles
 
     // Reset any previous state
     instructions.textContent = 'Click "Start" to begin the exercise.';
@@ -147,7 +148,7 @@ function initBreathingExercise() {
     circle.style.animation = '';
     startButton.style.display = 'inline-block';
     checkInDiv.classList.add('hidden');
-    breathCount = 0;
+    breathCount = 0; // Reset breath count
 }
 
 function startBreathing() {
@@ -155,8 +156,6 @@ function startBreathing() {
     let circle = document.querySelector('.circle');
     let startButton = document.getElementById('startButton');
     let checkInDiv = document.getElementById('check-in-breathing');
-    let breathCount = 0;
-    let maxBreaths = 4; // Number of breathing cycles
 
     startButton.style.display = 'none';
     instructions.textContent = 'Breathe In...';
@@ -174,12 +173,12 @@ function startBreathing() {
             circle.style.animationTimingFunction = 'ease-in-out';
 
             setTimeout(() => {
-                breathCount++;
+                breathCount++; // Increment the breath count
                 if (breathCount < maxBreaths) {
                     resetCircle();
                     startBreathing(); // Repeat the cycle
                 } else {
-                    endBreathingExercise();
+                    endBreathingExercise(); // End the exercise
                 }
             }, 4000); // Wait for breathe out
         }, 2000); // Hold after breathe in
