@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calm and Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="Dhun Laagi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="page">
+        <div class="container">
+            <h1>Welcome to Calm and Connect</h1>
+            <p>You’re here, and that’s already a big step. Take a slow, deep breath.  
+            You don’t have to go through this alone. This space is designed to help you feel grounded and understood.</p>
+            <p>Know that what you’re feeling is real and valid. Together, we’ll work through a few steps to help you feel more connected and in control.</p>
+            <button class="next-button" onclick="showPage('grounding-page')">Next</button>
+        </div>
+    </div>
+
+    <!-- Grounding Page -->
+    <div id="grounding-page" class="page hidden">
+        <div class="container">
+            <h1>5-4-3-2-1 Grounding Exercise</h1>
+            <div id="exercise">
+                <!-- Dynamic content will appear here -->
+            </div>
+            <div id="check-in-grounding" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInGrounding('yes')">Yes</button>
+                <button onclick="handleCheckInGrounding('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breathing Page -->
+    <div id="breathing-page" class="page hidden">
+        <div class="container">
+            <h1>Deep Breathing Exercise</h1>
+            <p id="instruction">Click "Start" to begin the exercise.</p>
+            <div class="circle-container">
+                <div class="circle"></div>
+            </div>
+            <button id="startButton" onclick="startBreathing()">Start</button>
+            <div id="check-in-breathing" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInBreathing('yes')">Yes</button>
+                <button onclick="handleCheckInBreathing('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Affirmations Page -->
+    <div id="affirmations-page" class="page hidden">
+        <div class="container">
+            <h1>Positive Affirmations</h1>
+            <p>Embrace positivity with these affirmations.</p>
+            <div id="affirmation-container">
+                <p id="affirmation-text">Loading affirmation...</p>
+            </div>
+            <button id="new-affirmation-button" onclick="displayAffirmation()">New Affirmation</button>
+            <div id="check-in-affirmations" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInAffirmations('yes')">Yes</button>
+                <button onclick="handleCheckInAffirmations('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualization Page -->
+    <div id="visualization-page" class="page hidden">
+        <div class="container">
+            <h1>Relaxing Visualization</h1>
+            <p>Take a moment to watch this calming video.</p>
+            <div id="video-container">
+                <video id="calming-video" width="800" controls>
+                    <source src="A_Day_of_Joy_in_Banff.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="check-in-visualization" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInVisualization('yes')">Yes</button>
+                <button onclick="handleCheckInVisualization('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Puzzle Page -->
+    <div id="puzzle-page" class="page hidden">
+        <div class="container">
+            <h1>Relaxing Puzzle Game</h1>
+            <p>Assemble the puzzle to reveal the image. Take your time and focus on each piece.</p>
+            <div id="puzzle-container"></div>
+            <div id="check-in-puzzle" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInPuzzle('yes')">Yes</button>
+                <button onclick="handleCheckInPuzzle('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Math Quiz Page -->
+    <div id="math-quiz-page" class="page hidden">
+        <div class="container">
+            <h1>Relaxing Math Quiz</h1>
+            <p>Answer the following simple math questions.</p>
+            <div id="quiz-container">
+                <!-- Current question will be displayed here -->
+            </div>
+            <div id="check-in-math-quiz" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInMathQuiz('yes')">Yes</button>
+                <button onclick="handleCheckInMathQuiz('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coloring Page -->
+    <div id="coloring-page" class="page hidden">
+        <div class="container">
+            <h1>Relaxing Coloring Activity</h1>
+            <p>Select a color and start coloring the canvas below.</p>
+            <div id="color-picker">
+                <!-- Color options will be dynamically added here -->
+            </div>
+            <div id="canvas-container">
+                <canvas id="drawing-canvas"></canvas>
+            </div>
+            <button id="done-button">Done</button>
+            <div id="check-in-coloring" class="hidden">
+                <p>Are you feeling better?</p>
+                <button onclick="handleCheckInColoring('yes')">Yes</button>
+                <button onclick="handleCheckInColoring('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PMR Page -->
+    <div id="pmr-page" class="page hidden">
+        <div class="container">
+            <h1>Progressive Muscle Relaxation</h1>
+            <p>Follow the steps in the image to practice progressive muscle relaxation.</p>
+            <img src="relaxation-image.jpg" alt="Progressive Muscle Relaxation Steps" id="pmr-image">
+           <div id="response-panel">
+            <p>Are you feeling better?</p>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        	</div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
