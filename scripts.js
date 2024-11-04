@@ -1,4 +1,14 @@
 // Function to show a specific page
+function startBackgroundMusic() {
+    const backgroundMusic = document.getElementById('background-music');
+    if (backgroundMusic.paused) {
+        backgroundMusic.play().catch(error => {
+            console.log('Error playing background music:', error);
+        });
+    }
+}
+
+
 function showPage(pageId) {
     // Hide all pages
     const pages = document.querySelectorAll('.page');
@@ -20,12 +30,8 @@ function showPage(pageId) {
         // Initialize visualization
         initVisualization();
     } else {
-        // Play background music
-        if (backgroundMusic.paused) {
-            backgroundMusic.play();
-        }
-
-        // Initialize page-specific functions
+        // Do not automatically play background music here
+        // It will be handled by user interaction
         if (pageId === 'grounding-page') {
             initGroundingExercise();
         } else if (pageId === 'breathing-page') {
