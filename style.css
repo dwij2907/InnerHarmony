@@ -1,0 +1,513 @@
+/* ================================
+   General Styles
+================================ */
+
+/* Reset some basic elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f0f8ff;
+    color: #2f4f4f;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease;
+    position: relative;
+}
+
+/* Background Gradient Animation */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(143, 217, 234, 0.3), rgba(224, 255, 255, 0));
+    animation: gradientAnimation 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Styles */
+.container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: floatIn 1.5s ease-out;
+}
+
+@keyframes floatIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #5f9ea0;
+    margin-bottom: 20px;
+    animation: pulse 3s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #4b4b4b;
+    opacity: 0;
+    animation: textFadeIn 3s ease forwards;
+}
+
+@keyframes textFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Button Styles */
+button {
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #5f9ea0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: buttonFadeIn 3.5s ease forwards;
+}
+
+@keyframes buttonFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:hover {
+    background-color: #3b7c7c;
+    transform: scale(1.05);
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* ================================
+   Page-Specific Styles
+================================ */
+
+/* -------------------------------
+   Welcome Page Styles
+-------------------------------- */
+#welcome-page .container {
+    max-width: 600px; /* Specific to welcome page */
+}
+
+#welcome-page .next-button {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   Grounding Page Styles
+-------------------------------- */
+#grounding-page .container {
+    max-width: 600px;
+}
+
+#grounding-page h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#grounding-page input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#grounding-page .response-input {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   Breathing Page Styles
+-------------------------------- */
+#breathing-page .container {
+    max-width: 600px;
+}
+
+#breathing-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#breathing-page #instruction {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#breathing-page .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#breathing-page .circle {
+    width: 100px;
+    height: 100px;
+    background-color: #5f9ea0;
+    border-radius: 50%;
+    animation: none;
+    transform: scale(1); /* Ensure the circle starts at scale 1 */
+}
+
+/* Breathing Animations */
+@keyframes breatheIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
+
+@keyframes breatheOut {
+    from { transform: scale(1.5); }
+    to { transform: scale(1); }
+}
+
+/* -------------------------------
+   Affirmations Page Styles
+-------------------------------- */
+#affirmations-page .container {
+    max-width: 900px;
+}
+
+#affirmations-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#affirmations-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#affirmations-page #affirmation-container {
+    margin: 40px 0;
+    padding: 20px;
+    border: 2px solid #5f9ea0;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+#affirmations-page #affirmation-text {
+    font-size: 1.8em;
+    color: #333333;
+}
+
+#affirmations-page #new-affirmation-button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background-color: #5f9ea0;
+    border-radius: 5px;
+}
+
+#affirmations-page #new-affirmation-button:hover {
+    background-color: #3b7c7c;
+}
+
+/* -------------------------------
+   Visualization Page Styles
+-------------------------------- */
+#visualization-page .container {
+    max-width: 900px;
+}
+
+#visualization-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#visualization-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#visualization-page #video-container {
+    margin-bottom: 20px;
+}
+
+#visualization-page #calming-video {
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #5f9ea0;
+    border-radius: 10px;
+}
+
+#visualization-page #check-in-visualization {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   Puzzle Page Styles
+-------------------------------- */
+#puzzle-page .container {
+    max-width: 800px;
+}
+
+#puzzle-page h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#puzzle-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#puzzle-page #puzzle-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto 20px auto;
+    border: 2px solid #5f9ea0;
+    background-color: #e6f7ff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#puzzle-page .puzzle-slot {
+    border: 1px dashed #a0c4c7;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#puzzle-page .puzzle-piece {
+    position: absolute;
+    border: 1px solid #ddd;
+    cursor: grab;
+    background-size: 400px 400px;
+    width: 133.33px;
+    height: 133.33px;
+}
+
+#puzzle-page .puzzle-piece:active {
+    cursor: grabbing;
+}
+
+#puzzle-page #completion-message {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   Math Quiz Page Styles
+-------------------------------- */
+#math-quiz-page .container {
+    max-width: 600px;
+}
+
+#math-quiz-page h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#math-quiz-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#math-quiz-page #quiz-container {
+    margin-bottom: 20px;
+}
+
+#math-quiz-page .question {
+    margin: 15px 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+#math-quiz-page #answer-input {
+    font-size: 1.5em;
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#math-quiz-page .feedback {
+    margin-top: 10px;
+    color: green;
+    font-size: 1.2em;
+}
+
+#math-quiz-page .error {
+    color: red;
+    font-size: 1.2em;
+}
+
+#math-quiz-page #check-in-math-quiz {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   Coloring Page Styles
+-------------------------------- */
+#coloring-page .container {
+    max-width: 900px;
+}
+
+#coloring-page h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#coloring-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#coloring-page #color-picker {
+    margin-bottom: 20px;
+}
+
+#coloring-page .color-option {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+#coloring-page #canvas-container {
+    position: relative;
+    margin: 0 auto 20px auto;
+    border: 2px solid #5f9ea0;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#coloring-page #drawing-canvas {
+    background-color: #ffffff;
+    cursor: crosshair;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+}
+
+#coloring-page #done-button {
+    /* Inherited from general button styles */
+}
+
+#coloring-page #check-in-coloring {
+    /* Additional styles if needed */
+}
+
+/* -------------------------------
+   PMR Page Styles
+-------------------------------- */
+#pmr-page .container {
+    max-width: 600px;
+}
+
+#pmr-page h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#pmr-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#pmr-page #pmr-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#pmr-page #response-panel {
+    margin-top: 20px;
+}
+
+/* -------------------------------
+   Common Animations
+-------------------------------- */
+
+/* Breathing Animations (if not already defined above) */
+@keyframes breatheIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
+
+@keyframes breatheOut {
+    from { transform: scale(1.5); }
+    to { transform: scale(1); }
+}
+
+/* ================================
+   Responsive Styles
+================================ */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    #puzzle-page #puzzle-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    #puzzle-page .puzzle-piece {
+        width: 100px;
+        height: 100px;
+    }
+
+    #coloring-page #drawing-canvas {
+        max-width: 100%;
+    }
+
+    #visualization-page #calming-video {
+        max-width: 100%;
+    }
+}
