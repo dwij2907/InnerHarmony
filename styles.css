@@ -301,16 +301,17 @@ button:hover {
 }
 
 #puzzle-page #puzzle-container {
-    width: 400px;
-    height: 400px;
-    position: relative;
-    margin: 0 auto 20px auto;
-    border: 2px solid #5f9ea0;
-    background-color: #e6f7ff;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #5f9ea0;
+    background-color: #e6f7ff;
 }
+
 
 #puzzle-page .puzzle-slot {
     border: 1px dashed #a0c4c7;
@@ -320,12 +321,13 @@ button:hover {
 }
 
 #puzzle-page .puzzle-piece {
+    width: 133.33px;
+    height: 133.33px;
+    background-size: 400px 400px;
     position: absolute;
     border: 1px solid #ddd;
     cursor: grab;
-    background-size: 400px 400px;
-    width: 133.33px;
-    height: 133.33px;
+    z-index: 10; /* Ensure it displays above other elements */
 }
 
 #puzzle-page .puzzle-piece:active {
