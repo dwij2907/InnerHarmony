@@ -321,7 +321,7 @@ function handleCheckInVisualization(response) {
 function initPuzzle() {
     createPuzzle('puzzle-image.png'); // Ensure this image is 400x400 pixels or will be scaled accordingly
 
-    function createPuzzle(imageSrc) {
+    function createPuzzle(imageSrc2) {
         let container = document.getElementById('puzzle-container');
         container.innerHTML = ''; // Clear previous content
         const rows = 3;
@@ -344,7 +344,7 @@ function initPuzzle() {
         for (let i = 0; i < totalPieces; i++) {
             let piece = document.createElement('div');
             piece.className = 'puzzle-piece';
-            piece.style.backgroundImage = `url('${imageSrc}')`;
+            piece.style.backgroundImage = `url('${imageSrc2}')`;
 
             // Calculate background position
             let row = Math.floor(i / cols);
