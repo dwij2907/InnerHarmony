@@ -310,6 +310,7 @@ button:hover {
     margin: 0 auto;
     border: 2px solid #5f9ea0;
     background-color: #e6f7ff;
+    overflow: visible;
 }
 
 
@@ -328,6 +329,8 @@ button:hover {
     border: 1px solid #ddd;
     cursor: grab;
     z-index: 10; /* Ensure it displays above other elements */
+    top: 0;
+    left: 0;
 }
 
 #puzzle-page .puzzle-piece:active {
