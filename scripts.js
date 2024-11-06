@@ -320,11 +320,13 @@ function handleCheckInVisualization(response) {
 ================================ */
 function initPuzzle() {
     createPuzzle('puzzle-image.png'); // Ensure this image is 400x400 pixels or will be scaled accordingly
+    
     let container;
     let totalPieces;
     let piecesPlaced = 0;
     
     function createPuzzle(imageSrc2) {
+        console.log("Image source for puzzle:", imageSrc2); // Add this inside createPuzzle to confirm the path
         container = document.getElementById('puzzle-container');
         container.innerHTML = ''; // Clear previous content
         const rows = 3;
@@ -347,6 +349,7 @@ function initPuzzle() {
             let piece = document.createElement('div');
             piece.className = 'puzzle-piece';
             piece.style.backgroundImage = `url('${imageSrc2}')`;
+            console.log(`Background image set for piece: ${piece.style.backgroundImage}`); // Add this to verify
 
             // Calculate background position
             let row = Math.floor(i / cols);
