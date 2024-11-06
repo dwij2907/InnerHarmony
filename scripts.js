@@ -319,6 +319,9 @@ function handleCheckInVisualization(response) {
    Puzzle Game Logic
 ================================ */
 function initPuzzle() {
+    const container = document.getElementById('puzzle-container');
+    container.innerHTML = ''; // Clear any previous pieces
+    console.log("Initializing puzzle"); // Log to confirm the function is called
     createPuzzle('puzzle-image.png'); // Ensure this image is 400x400 pixels or will be scaled accordingly
     
     let container;
@@ -348,7 +351,7 @@ function initPuzzle() {
         for (let i = 0; i < totalPieces; i++) {
             let piece = document.createElement('div');
             piece.className = 'puzzle-piece';
-            piece.style.backgroundImage = `url('${imageSrc2}')`;
+            piece.style.backgroundImage = "url('puzzle-image.png')";
             console.log(`Background image set for piece: ${piece.style.backgroundImage}`); // Add this to verify
 
             // Calculate background position
