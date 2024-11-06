@@ -17,7 +17,7 @@ function showPage(pageId) {
     });
 
     // Show the specified page
-    const pageToShow = document.getElementById(pageId);
+    const pageToShow = document.getElementById('puzzle-page');
     pageToShow.classList.remove('hidden');
 
     // Handle background music and video
