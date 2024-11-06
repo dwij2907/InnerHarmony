@@ -319,7 +319,7 @@ function handleCheckInVisualization(response) {
    Puzzle Game Logic
 ================================ */
 function initPuzzle() {
-    createPuzzle('puzzle-image.JPG'); // Ensure this image is 400x400 pixels or will be scaled accordingly
+    createPuzzle('puzzle-image.png'); // Ensure this image is 400x400 pixels or will be scaled accordingly
 
     function createPuzzle(imageSrc) {
         let container = document.getElementById('puzzle-container');
