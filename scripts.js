@@ -33,11 +33,11 @@ function showPage(pageId) {
         // Do not automatically play background music here
         // It will be handled by user interaction
         if (pageId === 'grounding-page') {
-            //initGroundingExercise();
+            initGroundingExercise();
         } else if (pageId === 'breathing-page') {
-            //initBreathingExercise();
+            initBreathingExercise();
         } else if (pageId === 'affirmations-page') {
-            //initAffirmations();
+            initAffirmations();
         } else if (pageId === 'puzzle-page') {
             initPuzzle();
         } else if (pageId === 'math-quiz-page') {
@@ -52,7 +52,7 @@ function showPage(pageId) {
 
 // Function for the 'Next' button on the welcome page
 function nextStep() {
-    showPage('grounding-page');
+    showPage('puzzle-page');
 }
 
 /* ================================
