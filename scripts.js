@@ -320,16 +320,18 @@ function handleCheckInVisualization(response) {
 ================================ */
 function initPuzzle() {
     createPuzzle('puzzle-image.png'); // Ensure this image is 400x400 pixels or will be scaled accordingly
-
+    let container;
+    let totalPieces;
+    let piecesPlaced = 0;
+    
     function createPuzzle(imageSrc2) {
-        let container = document.getElementById('puzzle-container');
+        container = document.getElementById('puzzle-container');
         container.innerHTML = ''; // Clear previous content
         const rows = 3;
         const cols = 3;
         const pieceWidth = 400 / cols;  // Now 133.33px
         const pieceHeight = 400 / rows; // Now 133.33px
-        let totalPieces = rows * cols;
-        let piecesPlaced = 0;
+        totalPieces = rows * cols;
 
         let pieces = [];
 
