@@ -52,7 +52,7 @@ function showPage(pageId) {
 
 // Function for the 'Next' button on the welcome page
 function nextStep() {
-    showPage('puzzle-page');
+    showPage('grounding-page');
 }
 
 /* ================================
